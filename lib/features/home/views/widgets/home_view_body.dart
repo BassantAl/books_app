@@ -1,4 +1,5 @@
 import 'package:books_app/features/home/views/widgets/custom_app_bar_home.dart';
+import 'package:books_app/features/home/views/widgets/custom_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -9,9 +10,11 @@ class HomeViewBody extends StatelessWidget {
     return const SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            CustomAppBarHome()
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: CustomAppBarHome()),
+            SliverToBoxAdapter(child:  SizedBox(height: 20,)),
+            SliverToBoxAdapter(child: CustomListView()),
           ],
         ),
       ),

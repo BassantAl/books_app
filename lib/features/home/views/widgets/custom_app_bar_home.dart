@@ -9,7 +9,7 @@ class CustomAppBarHome extends StatelessWidget {
     return Row(
       children: [
         const Text('Books',style: AppStyles.semiBold18,),
-        Spacer(),
+        const Spacer(),
         IconButton(onPressed: (){}, icon: const Icon(Icons.search,))
       ],
     );
