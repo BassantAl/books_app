@@ -1,7 +1,9 @@
 import 'package:books_app/core/utils/app_routes.dart';
+import 'package:books_app/core/utils/service_locator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  setUpLocator();
   runApp(const MyApp());
 }
 
