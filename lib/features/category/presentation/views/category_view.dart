@@ -1,4 +1,5 @@
 import 'package:books_app/core/utils/app_styles.dart';
+import 'package:books_app/features/category/presentation/views/widgets/category_view_body.dart';
 import 'package:books_app/features/home/data/models/category_model.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class CategoryView extends StatelessWidget {
         title:Text(categoryModel.name,style: AppStyles.semiBold18,) ,
         centerTitle: true,
       ),
-      body: Center(child: Text(categoryModel.name),),
+      body:CategoryViewBody() ,
     );
   }
 }
