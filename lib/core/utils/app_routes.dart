@@ -1,4 +1,4 @@
-import 'package:books_app/features/home/views/home_view.dart';
+import 'package:books_app/features/home/presentation/views/home_view.dart';
 import 'package:books_app/features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 

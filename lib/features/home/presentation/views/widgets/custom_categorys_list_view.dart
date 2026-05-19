@@ -1,4 +1,4 @@
-import 'package:books_app/features/home/views/widgets/custom_list_view_item.dart';
+import 'package:books_app/features/home/presentation/views/widgets/custom_categorys_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomListView extends StatelessWidget {

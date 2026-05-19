@@ -1,3 +1,4 @@
+import 'package:books_app/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
@@ -12,8 +13,9 @@ class CustomListViewItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(image: AssetImage('assets/images/Book 1 Hightligh.png',),fit: BoxFit.fill),
+            image: DecorationImage(image: AssetImage(AppAssets.arts,),fit: BoxFit.cover),
           ),
+          child: Center(child: Text('arts',)),
         ),
       ),
     );

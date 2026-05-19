@@ -1,5 +1,5 @@
-import 'package:books_app/features/home/views/widgets/custom_app_bar_home.dart';
-import 'package:books_app/features/home/views/widgets/custom_list_view.dart';
+import 'package:books_app/features/home/presentation/views/widgets/custom_app_bar_home.dart';
+import 'package:books_app/features/home/presentation/views/widgets/custom_categorys_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
