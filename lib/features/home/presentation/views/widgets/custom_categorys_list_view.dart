@@ -27,7 +27,7 @@ class _CustomListViewState extends State<CustomListView> {
             onTap: () {
               GoRouter.of(context).push(AppRoutes.category,extra:repo.categories[index] );
             },
-            child: ImageBooksItem(image: repo.categories[index].image,child: Text(repo.categories[index].name,style: AppStyles.semiBold18,),));
+            child: ImageBooksItem(image: AssetImage(repo.categories[index].image),child: Text(repo.categories[index].name,style: AppStyles.semiBold18,),));
         },
       ),
     );

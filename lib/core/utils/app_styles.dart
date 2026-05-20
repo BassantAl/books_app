@@ -12,4 +12,10 @@ abstract class AppStyles {
     color: Colors.white
   );
 
+  static const TextStyle regular16 = TextStyle(
+    fontWeight: FontWeight.normal,
+    fontSize: 16,
+    color: Colors.lightBlue
+  );
+
 }

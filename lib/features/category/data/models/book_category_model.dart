@@ -1,14 +1,14 @@
 class BookModel {
   final String title;
   final String authorName;
-  final int coverId;
+  final int? coverId;
   final int firstPublishYear;
   final String description;
 
   BookModel({
     required this.title,
     required this.authorName,
-    required this.coverId,
+     this.coverId,
     required this.firstPublishYear,
     required this.description,
   });
@@ -23,7 +23,7 @@ class BookModel {
     return BookModel(
       title: json['title'] as String,
       authorName: authors.isNotEmpty ? authors[0]['name'] as String : 'Unknown',
-      coverId: json['cover_id'] as int,
+      coverId: json['cover_id'] ?? 0,
       firstPublishYear: json['first_publish_year'] as int,
       description: subjects.take(3).join(', '),
     );

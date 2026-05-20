@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 
 class ImageBooksItem extends StatelessWidget {
-  const ImageBooksItem({super.key, required this.image, this.child});
-  final String image;
-  final Widget? child;
+  const ImageBooksItem({super.key, this.child, required this.image});
 
+  final Widget? child;
+  final ImageProvider<Object> image;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +14,7 @@ class ImageBooksItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+            image: DecorationImage(image: image, fit: BoxFit.cover),
           ),
           child: Center(child: child),
         ),
