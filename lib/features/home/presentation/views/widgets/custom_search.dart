@@ -1,0 +1,25 @@
+import 'package:books_app/core/utils/app_colors.dart';
+import 'package:flutter/material.dart';
+
+class CustomSearch extends StatelessWidget {
+  const CustomSearch({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: AppColors.secondaryColor)
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: AppColors.primaryColor)
+        ),
+        hintText: 'search about books',
+        suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.search))
+      ),
+
+    );
+  }
+}

@@ -1,5 +1,6 @@
 import 'package:books_app/features/home/presentation/views/widgets/custom_app_bar_home.dart';
 import 'package:books_app/features/home/presentation/views/widgets/custom_categorys_list_view.dart';
+import 'package:books_app/features/home/presentation/views/widgets/custom_search.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -10,11 +11,14 @@ class HomeViewBody extends StatelessWidget {
     return const SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(child: CustomAppBarHome()),
-            SliverToBoxAdapter(child:  SizedBox(height: 20,)),
-            SliverFillRemaining(child:CustomListView() ,)
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBarHome(),
+            SizedBox(height: 30),
+            CustomSearch(),
+            SizedBox(height: 30),
+            Expanded(child: CustomListView()),
           ],
         ),
       ),
