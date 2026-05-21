@@ -1,5 +1,5 @@
 import 'package:books_app/core/utils/app_styles.dart';
-import 'package:books_app/core/widgets/image_books_item.dart';
+import 'package:books_app/features/category/presentation/views/widgets/custom_network_image.dart';
 import 'package:books_app/features/category/data/models/book_category_model.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +12,10 @@ class BooksDetailsItem extends StatelessWidget {
     return SizedBox(
       height: 150,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Row(
           children: [
-            ImageBooksItem(image: NetworkImage(bookModel.coverImageUrl),),
+           CustomNetworkImage(image: bookModel.coverImageUrl,),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -19,7 +19,7 @@ class CategoryView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           foregroundColor: Colors.white,
-          title: Text(categoryModel.name, style: AppStyles.semiBold18),
+          title: Text(categoryModel.name, style: AppStyles.bold20),
           centerTitle: true,
         ),
         body: CategoryViewBody(),

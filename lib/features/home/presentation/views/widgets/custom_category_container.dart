@@ -1,7 +1,7 @@
 
 import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/core/utils/app_styles.dart';
-import 'package:books_app/core/widgets/image_books_item.dart';
+import 'package:books_app/features/home/presentation/views/widgets/image_books_item.dart';
 import 'package:books_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:flutter/material.dart';
 
