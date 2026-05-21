@@ -8,7 +8,7 @@ class CustomNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14,),
+      padding: const EdgeInsets.only(top: 14,bottom: 14,right: 10),
       child: AspectRatio(
         aspectRatio: 2.3 / 3.2,
         child: ClipRRect(
