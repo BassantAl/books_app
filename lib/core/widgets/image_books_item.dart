@@ -10,13 +10,13 @@ class ImageBooksItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: AspectRatio(
-        aspectRatio: 2.5 / 3.9,
+        aspectRatio: 2.5 / 2.7,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(image: image, fit: BoxFit.cover),
           ),
-          child: Center(child: child),
+          child: Align(alignment: Alignment.bottomLeft, child: child),
         ),
       ),
     );

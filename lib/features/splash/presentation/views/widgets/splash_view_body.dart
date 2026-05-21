@@ -1,3 +1,4 @@
+import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/core/utils/app_routes.dart';
 import 'package:books_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       duration: Duration(seconds: 1),
     );
     animation = ColorTween(
-      begin: Colors.blue,
+      begin: AppColors.secondaryColor,
       end: Colors.white,
     ).animate(controller);
     controller.forward();

@@ -14,9 +14,7 @@ class HomeViewBody extends StatelessWidget {
           slivers: [
             SliverToBoxAdapter(child: CustomAppBarHome()),
             SliverToBoxAdapter(child:  SizedBox(height: 20,)),
-            SliverToBoxAdapter(child: CustomListView()),
-            SliverToBoxAdapter(child: SizedBox(height: 30,),),
-            // SliverToBoxAdapter(child: Text('top recommendation'),)
+            SliverFillRemaining(child:CustomListView() ,)
           ],
         ),
       ),

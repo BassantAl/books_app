@@ -12,7 +12,7 @@ class HomeRepoImpl  implements HomeRepo {
       CategoryModel(image: AppAssets.childern, name: 'Childern'),
       CategoryModel(image: AppAssets.history, name: 'History'),
       CategoryModel(image: AppAssets.language, name: 'Language'),
-      CategoryModel(image: AppAssets.scienceAndMath, name: 'Science&Math'),
+      
     ];
   }
 }

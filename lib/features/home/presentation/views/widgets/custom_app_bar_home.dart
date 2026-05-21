@@ -1,3 +1,4 @@
+import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -6,11 +7,20 @@ class CustomAppBarHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Books',style: AppStyles.semiBold18,),
-        const Spacer(),
-        IconButton(onPressed: (){}, icon: const Icon(Icons.search,))
+        SizedBox(height: 20,),
+        const Text('Books',style: AppStyles.bold24,),
+        SizedBox(height: 5,),
+        Container(
+            width: 100,
+            height: 5,
+            decoration: BoxDecoration(
+              color:  AppColors.secondaryColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
       ],
     );
   }
