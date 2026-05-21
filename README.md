@@ -16,10 +16,10 @@ API integration
 ## Screenshots  
 
 ### First screen  
-![image](assets/images/simulator_screenshot_D2AD542D-307D-4C31-9D38-1B9697DE6ED3.png)  
+<img src="assets/images/simulator_screenshot_D2AD542D-307D-4C31-9D38-1B9697DE6ED3.png" width="250"/>
 
 ### Second screen  
-![image](assets/images/simulator_screenshot_F35D5289-71A5-4B42-97EC-BCE15AC7E3D2.png)  
+<img src="assets/images/simulator_screenshot_F35D5289-71A5-4B42-97EC-BCE15AC7E3D2.png" width="250"/>
 
 ## Setup  
 
