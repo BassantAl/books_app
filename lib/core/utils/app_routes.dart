@@ -1,3 +1,4 @@
+import 'package:books_app/features/category/data/models/book_category_model.dart';
 import 'package:books_app/features/category/presentation/views/category_view.dart';
 import 'package:books_app/features/home/data/models/category_model.dart';
 import 'package:books_app/features/category/presentation/views/books_details.dart';
@@ -33,7 +34,8 @@ abstract class AppRoutes {
       GoRoute(
         path: bookDetails,
         builder: (context, state) {
-          return BooksDetails();
+          final bookModel=state.extra as BookModel;
+          return BooksDetails(bookModel:bookModel ,);
         },
       ),
     ],
