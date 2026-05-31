@@ -1,6 +1,6 @@
 import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/core/utils/app_routes.dart';
-import 'package:books_app/features/category/data/models/book_category_model.dart';
+import 'package:books_app/core/utils/models/book_category_model.dart';
 import 'package:books_app/features/category/presentation/views/widgets/books_details_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

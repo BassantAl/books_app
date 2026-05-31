@@ -1,8 +1,9 @@
-import 'package:books_app/features/category/data/models/book_category_model.dart';
+import 'package:books_app/core/utils/models/book_category_model.dart';
 import 'package:books_app/features/category/presentation/views/category_view.dart';
 import 'package:books_app/features/home/data/models/category_model.dart';
 import 'package:books_app/features/category/presentation/views/books_details.dart';
 import 'package:books_app/features/home/presentation/views/home_view.dart';
+import 'package:books_app/features/search/presentation/views/search_view.dart';
 import 'package:books_app/features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,6 +11,7 @@ abstract class AppRoutes {
   static const String home = '/homeview';
   static const String category = '/categoryview';
   static const String bookDetails = '/bookdetails';
+  static const String search = '/searchview';
   static final GoRouter route = GoRouter(
     routes: [
       GoRoute(
@@ -34,8 +36,14 @@ abstract class AppRoutes {
       GoRoute(
         path: bookDetails,
         builder: (context, state) {
-          final bookModel=state.extra as BookModel;
-          return BooksDetails(bookModel:bookModel ,);
+          final bookModel = state.extra as BookModel;
+          return BooksDetails(bookModel: bookModel);
+        },
+      ),
+      GoRoute(
+        path: search,
+        builder: (context, state) {
+          return SearchView(bookTitle: state.extra as String,);
         },
       ),
     ],

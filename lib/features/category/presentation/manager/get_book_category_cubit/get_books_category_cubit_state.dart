@@ -1,4 +1,4 @@
-import 'package:books_app/features/category/data/models/book_category_model.dart';
+import 'package:books_app/core/utils/models/book_category_model.dart';
 
 class GetBooksCategoryState {}
 
