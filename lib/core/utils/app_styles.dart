@@ -25,4 +25,10 @@ abstract class AppStyles {
     color: AppColors.secondaryColor
   );
 
+  static const TextStyle regular14 = TextStyle(
+    fontWeight: FontWeight.normal,
+    fontSize: 14,
+    color: AppColors.primaryColor
+  );
+
 }
