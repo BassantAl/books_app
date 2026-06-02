@@ -1,13 +1,13 @@
 import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/core/utils/app_styles.dart';
-import 'package:books_app/core/utils/models/book_category_model.dart';
+import 'package:books_app/core/utils/models/base_model.dart';
 import 'package:books_app/features/category/presentation/views/widgets/custom_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BooksDetailsBody extends StatelessWidget {
-  const BooksDetailsBody({super.key, required this.bookModel});
-  final BookModel bookModel;
+  const BooksDetailsBody({super.key, required this.baseModel, });
+  final BaseModel baseModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,13 +18,13 @@ class BooksDetailsBody extends StatelessWidget {
           children: [
             SizedBox(
               height: 300,
-              child: CustomNetworkImage(image: bookModel.coverImageUrl),
+              child: CustomNetworkImage(image: baseModel.coverImageUrl),
             ),
-            Text(bookModel.title, style: AppStyles.bold24),
+            Text(baseModel.title, style: AppStyles.bold24),
             const SizedBox(height: 5),
             Align(
               alignment: Alignment.centerLeft,
-              child: Text(bookModel.authorName, style: AppStyles.regular16),
+              child: Text(baseModel.authorName, style: AppStyles.regular16),
             ),
             const SizedBox(height: 5),
             const Divider(thickness: 0.5),
@@ -39,7 +39,7 @@ class BooksDetailsBody extends StatelessWidget {
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    bookModel.firstPublishYear.toString(),
+                    baseModel.firstPublishYear.toString(),
                     style: AppStyles.regular14,
                   ),
                   Spacer(),
@@ -51,7 +51,7 @@ class BooksDetailsBody extends StatelessWidget {
                   const SizedBox(width: 4),
                   GestureDetector(
                     onTap: () async {
-                      await launchUrl(Uri.parse(bookModel.bookUrl));
+                      await launchUrl(Uri.parse(baseModel.bookUrl));
                     },
                     child: Text(
                       'Book Url',
@@ -67,9 +67,11 @@ class BooksDetailsBody extends StatelessWidget {
             const SizedBox(height: 5,),
             Align(
                alignment: Alignment.centerLeft,
-              child: Text('description', style: AppStyles.bold20)),
+              child: Visibility(
+                visible:  baseModel.description.isNotEmpty,
+                child: Text('description', style: AppStyles.bold20))),
               const SizedBox(height: 4,),
-            Text(bookModel.description,style: AppStyles.regular14,),
+            Text(baseModel.description,style: AppStyles.regular14,),
 
           ],
         ),

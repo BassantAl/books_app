@@ -7,6 +7,6 @@ class AppService {
   Future<Map<String, dynamic>> get(String url) async {
     var response = await dio.get(url);
     return response.data;
-    print(response.data);
+    
   }
 }

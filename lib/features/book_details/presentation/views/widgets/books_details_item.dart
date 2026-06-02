@@ -1,11 +1,11 @@
 import 'package:books_app/core/utils/app_styles.dart';
+import 'package:books_app/core/utils/models/base_model.dart';
 import 'package:books_app/features/category/presentation/views/widgets/custom_network_image.dart';
-import 'package:books_app/core/utils/models/book_category_model.dart';
 import 'package:flutter/material.dart';
 
 class BooksDetailsItem extends StatelessWidget {
-  const BooksDetailsItem({super.key, required this.bookModel});
-  final BookModel bookModel;
+  const BooksDetailsItem({super.key, required this.baseModel, });
+  final BaseModel baseModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,24 +15,31 @@ class BooksDetailsItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Row(
           children: [
-           CustomNetworkImage(image: bookModel.coverImageUrl,),
+            CustomNetworkImage(image: baseModel.coverImageUrl),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    bookModel.title,
+                    baseModel.title,
                     style: AppStyles.semiBold18,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),
-                  Text(bookModel.authorName,maxLines: 1,overflow: TextOverflow.ellipsis,),
+                  Text(
+                    baseModel.authorName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ],
               ),
             ),
-            SizedBox(width: 4,),
-            Text('(${bookModel.firstPublishYear.toString()})',style: AppStyles.regular16,),
+            SizedBox(width: 4),
+            Text(
+              '(${baseModel.firstPublishYear.toString()})',
+              style: AppStyles.regular16,
+            ),
           ],
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:books_app/core/utils/models/book_category_model.dart';
+import 'package:books_app/features/search/data/models/search_model.dart';
 import 'package:books_app/features/search/data/repos/search_repo.dart';
 import 'package:meta/meta.dart';
 

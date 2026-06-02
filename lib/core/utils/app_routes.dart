@@ -1,7 +1,7 @@
-import 'package:books_app/core/utils/models/book_category_model.dart';
+import 'package:books_app/core/utils/models/base_model.dart';
 import 'package:books_app/features/category/presentation/views/category_view.dart';
 import 'package:books_app/features/home/data/models/category_model.dart';
-import 'package:books_app/features/category/presentation/views/books_details.dart';
+import 'package:books_app/features/book_details/presentation/views/book_details.dart';
 import 'package:books_app/features/home/presentation/views/home_view.dart';
 import 'package:books_app/features/search/presentation/views/search_view.dart';
 import 'package:books_app/features/splash/presentation/views/splash_view.dart';
@@ -36,8 +36,8 @@ abstract class AppRoutes {
       GoRoute(
         path: bookDetails,
         builder: (context, state) {
-          final bookModel = state.extra as BookModel;
-          return BooksDetails(bookModel: bookModel);
+          final baseModel = state.extra as BaseModel;
+          return BooksDetails(baseModel:baseModel );
         },
       ),
       GoRoute(

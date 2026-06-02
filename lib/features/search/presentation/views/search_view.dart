@@ -1,3 +1,4 @@
+import 'package:books_app/core/utils/app_styles.dart';
 import 'package:books_app/core/utils/service_locator.dart';
 import 'package:books_app/features/search/data/repos/search_repo_impl.dart';
 import 'package:books_app/features/search/presentation/manager/cubit/get_search_result_cubit.dart';
@@ -12,8 +13,10 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetSearchResultCubit(searchRepo: getIt.get<SearchRepoImpl>()..getSearchResult(bookTitle: bookTitle)),
-      child: Scaffold(body: SearchViewBody()),
+      create: (context) => GetSearchResultCubit(searchRepo: getIt.get<SearchRepoImpl>())..getSearchResult(bookTitle: bookTitle),
+      child:  Scaffold(
+        appBar: AppBar(centerTitle: true,title: Text('result',style: AppStyles.bold20,),),
+        body: SafeArea(child: SearchViewBody())),
     );
   }
 }

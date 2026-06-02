@@ -6,7 +6,7 @@ sealed class GetSearchResultState {}
 final class GetSearchResultInitial extends GetSearchResultState {}
 
 class GetSearchResultSuccess extends GetSearchResultState {
-  final List<BookModel> books;
+  final List<SearchModel> books;
   GetSearchResultSuccess({required this.books});
 }
 
