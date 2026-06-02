@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     animationOfChangeColor();
-    navigateToHomeView();
+    navigateTologinView();
   }
 
   @override
@@ -61,9 +61,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
     controller.forward();
   }
 
-  void navigateToHomeView() {
+  void navigateTologinView() {
     Future.delayed(Duration(seconds: 3), () {
-      GoRouter.of(context).pushReplacement(AppRoutes.home);
+      GoRouter.of(context).pushReplacement(AppRoutes.login);
     });
   }
 }
+
+
+//  void navigateToHomeView() {
+//     Future.delayed(Duration(seconds: 3), () {
+//       GoRouter.of(context).pushReplacement(AppRoutes.home);
+//     });
+//   }

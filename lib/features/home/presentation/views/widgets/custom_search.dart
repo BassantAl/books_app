@@ -23,7 +23,12 @@ class CustomSearch extends StatelessWidget {
           borderSide: BorderSide(color: AppColors.primaryColor),
         ),
         hintText: 'search about books',
-        suffixIcon: IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+        suffixIcon: IconButton(
+          onPressed: () {
+            GoRouter.of(context).push(AppRoutes.search);
+          },
+          icon: Icon(Icons.search),
+        ),
       ),
     );
   }
