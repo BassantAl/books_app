@@ -12,6 +12,7 @@ class CustomLoginForm extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            
             validator: (value) {
               if (value!.isEmpty) {
                 return 'please write your name';
@@ -23,6 +24,7 @@ class CustomLoginForm extends StatelessWidget {
           ),
           SizedBox(height: 40),
           TextFormField(
+            obscureText: true,
             validator: (value) {
               if (value!.isEmpty) {
                 return 'please write your password';

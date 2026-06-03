@@ -2,11 +2,8 @@ import 'package:books_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    super.key,
-   this.onPressed,
-  });
-
+  const CustomButton({super.key, this.onPressed, required this.text});
+  final String text;
   final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
@@ -16,15 +13,11 @@ class CustomButton extends StatelessWidget {
           TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         foregroundColor: WidgetStatePropertyAll(Colors.black),
-        backgroundColor: WidgetStatePropertyAll(
-          AppColors.secondaryColor,
-        ),
-        minimumSize: WidgetStatePropertyAll(
-          const Size(double.infinity, 50),
-        ),
+        backgroundColor: WidgetStatePropertyAll(AppColors.secondaryColor),
+        minimumSize: WidgetStatePropertyAll(const Size(double.infinity, 50)),
       ),
-      onPressed:onPressed,
-      child: Text('login'),
+      onPressed: onPressed,
+      child: Text(text),
     );
   }
 }

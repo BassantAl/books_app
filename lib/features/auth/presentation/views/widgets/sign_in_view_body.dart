@@ -3,19 +3,19 @@ import 'package:books_app/core/utils/app_styles.dart';
 import 'package:books_app/features/auth/presentation/views/widgets/auth_footer.dart';
 import 'package:books_app/features/auth/presentation/views/widgets/custom_auth_icon.dart';
 import 'package:books_app/features/auth/presentation/views/widgets/custom_button.dart';
-import 'package:books_app/features/auth/presentation/views/widgets/custom_login_form.dart';
+import 'package:books_app/features/auth/presentation/views/widgets/custom_sign_in_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class SignInViewBody extends StatefulWidget {
+  const SignInViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SignInViewBody> createState() => _SignInViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
-  final GlobalKey<FormState> _globalKey = GlobalKey();
+class _SignInViewBodyState extends State<SignInViewBody> {
+  final GlobalKey<FormState> globalKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -28,27 +28,26 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         ),
         child: Column(
           children: [
-            const SizedBox(height: 5),
-            CustomAuthIcon(icon: Icons.login,),
+            CustomAuthIcon(icon: Icons.account_box),
             const SizedBox(height: 16),
-            const Text('Login to your account', style: AppStyles.bold24),
+            const Text('Create Account', style: AppStyles.bold24),
             const SizedBox(height: 16),
-            CustomLoginForm(globalKey: _globalKey),
+            CustomSignInForm(globalKey: globalKey),
             const SizedBox(height: 40),
             CustomButton(
-              text: 'login',
+              text: 'SignIn',
               onPressed: () {
-                if (_globalKey.currentState!.validate()) {
+                if (globalKey.currentState!.validate()) {
                   GoRouter.of(context).push(AppRoutes.home);
                 }
               },
             ),
             const SizedBox(height: 20),
             AuthFooter(
-              text: 'Don`t have an account?',
-              buttontext: 'SignIn',
+              text: 'Already have an account?',
+              buttontext: 'Login',
               onPressed: () {
-                GoRouter.of(context).pushReplacement(AppRoutes.signIn);
+                GoRouter.of(context).pushReplacement(AppRoutes.login);
               },
             ),
           ],
@@ -57,4 +56,3 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     );
   }
 }
-

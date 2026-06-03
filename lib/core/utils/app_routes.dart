@@ -1,5 +1,6 @@
 import 'package:books_app/core/utils/models/base_model.dart';
 import 'package:books_app/features/auth/presentation/views/login_view.dart';
+import 'package:books_app/features/auth/presentation/views/sign_in_view.dart';
 import 'package:books_app/features/category/presentation/views/category_view.dart';
 import 'package:books_app/features/home/data/models/category_model.dart';
 import 'package:books_app/features/book_details/presentation/views/book_details.dart';
@@ -14,6 +15,7 @@ abstract class AppRoutes {
   static const String bookDetails = '/bookdetails';
   static const String search = '/searchview';
   static const String login = '/loginview';
+  static const String signIn = '/signinview';
   static final GoRouter route = GoRouter(
     routes: [
       GoRoute(
@@ -55,7 +57,12 @@ abstract class AppRoutes {
           return SearchView(bookTitle: state.extra as String,);
         },
       ),
-
+       GoRoute(
+        path: signIn,
+        builder: (context, state) {
+          return SignInView();
+        },
+      ),
        
     ],
   );
