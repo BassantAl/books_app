@@ -1,6 +1,8 @@
 import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/core/utils/app_routes.dart';
 import 'package:books_app/core/utils/app_styles.dart';
+import 'package:books_app/features/auth/presentation/views/widgets/custom_button.dart';
+import 'package:books_app/features/auth/presentation/views/widgets/custom_login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,93 +25,56 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           right: 24,
           left: 24,
         ),
-        child: Column(
-    
+        child:  Column(
           children: [
-            Text('Create Account',style: AppStyles.bold24,),
-            SizedBox(height: 5,),
+            
+            const SizedBox(height: 5),
             Container(
               width: 70,
               height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: Colors.black
+                color: Colors.black,
               ),
-              child: Icon(Icons.login)),
-            SizedBox(height: 16,),
-            Form(
-              key: _globalKey,
-              child: Column(
-                children: [
-                  TextFormField(
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'please write your name';
-                      }
-                    },
-                    decoration: inputFeildDecoration(hintText: 'name'),
-                  ),
-                  SizedBox(height: 40),
-                  TextFormField(
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'please write your password';
-                      }
-                    },
-                    decoration: inputFeildDecoration(hintText: 'password'),
-                  ),
-                ],
-              ),
+              child: Icon(Icons.login),
             ),
-            SizedBox(height: 40),
-            ElevatedButton(
-              style: ButtonStyle(
-                textStyle: WidgetStatePropertyAll(
-                  TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                ),
-                foregroundColor: WidgetStatePropertyAll(Colors.black),
-                backgroundColor: WidgetStatePropertyAll(
-                  AppColors.secondaryColor,
-                ),
-                minimumSize: WidgetStatePropertyAll(
-                  const Size(double.infinity, 50),
-                ),
-              ),
+            const SizedBox(height: 16),
+            const Text('Create Account', style: AppStyles.bold24),
+            const SizedBox(height: 16),
+             CustomLoginForm(globalKey: _globalKey),
+            const SizedBox(height: 40),
+            CustomButton(
               onPressed: () {
-                if(_globalKey.currentState!.validate()){
-                   GoRouter.of(context).push(AppRoutes.home);
+                if (_globalKey.currentState!.validate()) {
+                  GoRouter.of(context).push(AppRoutes.home);
                 }
-               
               },
-              child: Text('login'),
             ),
-
-            SizedBox(height: 20,),
-
-            Row(
+            const SizedBox(height: 20),
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Don`t have an account?',style: AppStyles.regular16.copyWith(color: AppColors.primaryColor),),
-                TextButton(onPressed: (){}, child: Text('SignIn',style: AppStyles.regular16,))
+                Text(
+                  'Don`t have an account?',
+                  style: AppStyles.regular16.copyWith(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('SignIn', style: AppStyles.regular16),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  InputDecoration inputFeildDecoration({required String hintText}) {
-    return InputDecoration(
-      hintText: hintText,
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: AppColors.secondaryColor),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: AppColors.primaryColor),
-      ),
-    );
-  }
+  
+
+  
 }
+
+
