@@ -35,7 +35,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
             CustomSignUpForm(globalKey: globalKey),
             const SizedBox(height: 40),
             CustomButton(
-              text: 'SignIn',
+              child:Text('SignUp') ,
               onPressed: () {
                 if (globalKey.currentState!.validate()) {
                   GoRouter.of(context).push(AppRoutes.home);

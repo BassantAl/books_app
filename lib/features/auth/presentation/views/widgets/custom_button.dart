@@ -2,8 +2,8 @@ import 'package:books_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onPressed, required this.text});
-  final String text;
+  const CustomButton({super.key, this.onPressed, this.child, });
+  final  Widget? child;
   final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
         minimumSize: WidgetStatePropertyAll(const Size(double.infinity, 50)),
       ),
       onPressed: onPressed,
-      child: Text(text),
+      child: child,
     );
   }
 }
