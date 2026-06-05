@@ -46,7 +46,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             const SizedBox(height: 20),
             AuthFooter(
               text: 'Don`t have an account?',
-              buttontext: 'SignIn',
+              buttontext: 'SignUp',
               onPressed: () {
                 GoRouter.of(context).pushReplacement(AppRoutes.signIn);
               },
