@@ -1,4 +1,4 @@
-import 'package:books_app/core/utils/errors.dart';
+import 'package:books_app/core/utils/errors/errors.dart';
 import 'package:books_app/features/search/data/models/search_model.dart';
 import 'package:dartz/dartz.dart';
 

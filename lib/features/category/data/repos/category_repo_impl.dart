@@ -1,5 +1,6 @@
+import 'package:books_app/core/utils/errors/server_failure.dart';
 import 'package:books_app/core/utils/services/app_service.dart';
-import 'package:books_app/core/utils/errors.dart';
+import 'package:books_app/core/utils/errors/errors.dart';
 import 'package:books_app/core/utils/service_locator.dart';
 import 'package:books_app/features/category/data/models/book_category_model.dart';
 import 'package:books_app/features/category/data/repos/category_repo.dart';

@@ -1,8 +1,8 @@
 import 'package:books_app/core/utils/app_decoration.dart';
 import 'package:flutter/material.dart';
 
-class CustomSignInForm extends StatelessWidget {
-  const CustomSignInForm({super.key, required this.globalKey});
+class CustomSignUpForm extends StatelessWidget {
+  const CustomSignUpForm({super.key, required this.globalKey});
   final GlobalKey<FormState> globalKey;
   @override
   Widget build(BuildContext context) {

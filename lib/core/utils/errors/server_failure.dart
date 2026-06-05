@@ -1,9 +1,5 @@
+import 'package:books_app/core/utils/errors/errors.dart';
 import 'package:dio/dio.dart';
-
-abstract class Failure {
-  final String errorMessage;
-  Failure({required this.errorMessage});
-}
 
 class ServerFailure extends Failure {
   ServerFailure({required super.errorMessage});

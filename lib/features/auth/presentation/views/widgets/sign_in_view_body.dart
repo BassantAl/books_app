@@ -32,7 +32,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
             const SizedBox(height: 16),
             const Text('Create Account', style: AppStyles.bold24),
             const SizedBox(height: 16),
-            CustomSignInForm(globalKey: globalKey),
+            CustomSignUpForm(globalKey: globalKey),
             const SizedBox(height: 40),
             CustomButton(
               text: 'SignIn',

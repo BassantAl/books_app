@@ -1,6 +1,6 @@
 import 'package:books_app/core/utils/models/base_model.dart';
 import 'package:books_app/features/auth/presentation/views/login_view.dart';
-import 'package:books_app/features/auth/presentation/views/sign_in_view.dart';
+import 'package:books_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:books_app/features/category/presentation/views/category_view.dart';
 import 'package:books_app/features/home/data/models/category_model.dart';
 import 'package:books_app/features/book_details/presentation/views/book_details.dart';
@@ -48,22 +48,21 @@ abstract class AppRoutes {
         path: bookDetails,
         builder: (context, state) {
           final baseModel = state.extra as BaseModel;
-          return BooksDetails(baseModel:baseModel );
+          return BooksDetails(baseModel: baseModel);
         },
       ),
       GoRoute(
         path: search,
         builder: (context, state) {
-          return SearchView(bookTitle: state.extra as String,);
+          return SearchView(bookTitle: state.extra as String);
         },
       ),
-       GoRoute(
+      GoRoute(
         path: signIn,
         builder: (context, state) {
-          return SignInView();
+          return SignUpView();
         },
       ),
-       
     ],
   );
 }
