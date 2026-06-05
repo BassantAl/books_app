@@ -19,7 +19,7 @@ class SignupCubit extends Cubit<SignupState> {
     );
     result.fold(
       (failure) {
-        emit(SignupFailure(errorMessage: failure.toString()));
+        emit(SignupFailure(errorMessage: failure.errorMessage));
       },
       (credential) {
         emit(SignupSuccess());
